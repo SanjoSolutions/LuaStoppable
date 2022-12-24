@@ -30,7 +30,7 @@ end
 
 function Stoppable.Stoppable:stopAlso(stoppable)
   self:afterStop(function()
-    stoppable:Stop()
+    stoppable:stop()
   end)
 end
 
