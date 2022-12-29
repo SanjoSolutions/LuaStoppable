@@ -64,7 +64,7 @@ function Stoppable.Stoppable:stop()
   return resolvable
 end
 
-function Stoppable.Stoppable:stopAlso(stoppable)
+function Stoppable.Stoppable:alsoStop(stoppable)
   table.insert(self._alsoToStop, stoppable)
   return self
 end
