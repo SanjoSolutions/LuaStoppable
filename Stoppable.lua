@@ -39,7 +39,7 @@ function Stoppable.Stoppable:new()
 end
 
 function Stoppable.Stoppable:hasBeenRequestedToStop()
-  return not self._hasBeenRequestToStop
+  return self._hasBeenRequestToStop
 end
 
 function Stoppable.Stoppable:isRunning()
