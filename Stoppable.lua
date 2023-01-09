@@ -10,6 +10,8 @@ function Stoppable.Stoppable:new()
   local stoppable, resolvableInternal = Resolvable.Resolvable:new()
   stoppable._hasBeenRequestToStop = false
   stoppable._hasStopped = false
+  stoppable._onStop = Hook.Hook:new()
+  stoppable._onStop.runCallbacks = Function.once(stoppable._onStop.runCallbacks)
   stoppable._afterStop = Hook.Hook:new()
   stoppable._afterStop.runCallbacks = Function.once(stoppable._afterStop.runCallbacks)
   stoppable._alsoToStop = {}
@@ -60,12 +62,18 @@ function Stoppable.Stoppable:stop()
   Array.forEach(self._alsoToStop, function(stoppable)
     stoppable:stop()
   end)
+  self._onStop:runCallbacks()
 
   return resolvable
 end
 
 function Stoppable.Stoppable:alsoStop(stoppable)
   table.insert(self._alsoToStop, stoppable)
+  return self
+end
+
+function Stoppable.Stoppable:onStop(callback)
+  self._onStop:registerCallback(callback)
   return self
 end
 
