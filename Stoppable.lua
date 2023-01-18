@@ -25,8 +25,8 @@ function Stoppable.Stoppable:new()
           return stoppable:isRunning()
         end)
         local numberOfStillRunningStoppables = Array.length(stillRunningStoppables)
-        Array.forEach(stillRunningStoppables, function(stoppable)
-          stoppable:afterStop(function()
+        Array.forEach(stillRunningStoppables, function(stoppable2)
+          stoppable2:afterStop(function()
             numberOfStillRunningStoppables = numberOfStillRunningStoppables - 1
             if numberOfStillRunningStoppables == 0 then
               stoppable:_registerAsStopped()
@@ -91,4 +91,16 @@ end
 function Stoppable.Stoppable:_registerAsStopped()
   self._hasStopped = true
   self._afterStop:runCallbacks()
+end
+
+function Stoppable.all(stoppables, name)
+  local stoppable, stoppableInternal = Stoppable.Stoppable:new(name)
+
+  Array.forEach(stoppables, function (stoppable2)
+    stoppable:alsoStop(stoppable2)
+  end)
+
+  stoppableInternal:resolve()
+
+  return stoppable
 end
