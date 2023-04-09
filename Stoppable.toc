@@ -1,5 +1,5 @@
 ## Title: Stoppable
-## Interface: 100100
+## Interface: 100007
 ## Dependencies: Hook, Coroutine, Resolvable, Array, Function
 
 Stoppable.lua
