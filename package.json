@@ -1,10 +1,14 @@
 {
   "name": "@sanjo-addons/stoppable",
+  "version": "1.1.0",
   "dependencies": {
-    "@sanjo-addons/hook": "SanjoSolutions/LuaHook#v1.0.0",
-    "@sanjo-addons/coroutine": "SanjoSolutions/LuaCoroutine#v1.0.0",
-    "@sanjo-addons/resolvable": "SanjoSolutions/LuaResolvable#v1.0.0",
-    "@sanjo-addons/array": "SanjoSolutions/LuaArray#v1.0.0",
-    "@sanjo-addons/function": "SanjoSolutions/LuaFunction#v1.0.0"
+    "@sanjo-addons/hook": "^1.0.0",
+    "@sanjo-addons/coroutine": "^1.0.0",
+    "@sanjo-addons/resolvable": "^1.0.0",
+    "@sanjo-addons/array": "^1.0.0",
+    "@sanjo-addons/function": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
