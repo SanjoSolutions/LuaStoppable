@@ -1,10 +1,10 @@
 {
   "name": "Stoppable",
   "dependencies": {
-    "Hook": "SanjoSolutions/LuaHook#v1.1.0",
-    "Coroutine": "SanjoSolutions/LuaCoroutine#v1.1.0",
-    "Resolvable": "SanjoSolutions/LuaResolvable#v1.1.0",
-    "Array": "SanjoSolutions/LuaArray#v1.1.0",
-    "Function": "SanjoSolutions/LuaFunction#v1.1.0"
+    "Hook": "SanjoSolutions/LuaHook#v1.0.0",
+    "Coroutine": "SanjoSolutions/LuaCoroutine#v1.0.0",
+    "Resolvable": "SanjoSolutions/LuaResolvable#v1.0.0",
+    "Array": "SanjoSolutions/LuaArray#v1.0.0",
+    "Function": "SanjoSolutions/LuaFunction#v1.0.0"
   }
 }
